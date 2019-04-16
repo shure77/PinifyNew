@@ -1,0 +1,124 @@
+<div class="actionBar">
+  <img [src]="homeIcon" width="50" height="50" (click)='gotToHome()'>
+  <img [src]="createIcon" width="50" height="50" (click)='toggleCreate()'>
+  <img [src]="updateIcon" width="50" height="50" (click)='toggleUpdate()'>
+  <img [src]="deleteIcon" width="50" height="50" (click)='toggleDelete()'>
+</div>
+<div class="sidebar-outter">
+  <div class="sidebar-inner">
+    <div class="createMenu" *ngIf='showCreate'>
+      <form #f="ngForm">
+        Create new Pin in:<br>
+        <input type="text" name="city" [(ngModel)]="selectedMarker.city">
+        <br>
+        Pin title:<br>
+        <input type="text" name="title" [(ngModel)]="selectedMarker.title">
+        <br>
+        Pin street name:<br>
+        <input type="text" name="street" [(ngModel)]="selectedMarker.street">
+        <br>
+        Pin street number:<br>
+        <input type="text" name="street_number" [(ngModel)]="selectedMarker.street_number">
+        <br>
+        Pin zip:<br>
+        <input type="text" name="zip" [(ngModel)]="selectedMarker.zip">
+        <br>
+        Pin phone:<br>
+        <input type="text" name="phone" [(ngModel)]="selectedMarker.phone">
+        <br>
+        Pin email:<br>
+        <input type="text" name="email" [(ngModel)]="selectedMarker.email">
+        <br>
+        Pin website:<br>
+        <input type="text" name="website_url" [(ngModel)]="selectedMarker.website_url">
+        <br>
+        Pin description:<br>
+        <input type="text" name="description" [(ngModel)]="selectedMarker.description">
+        <br>
+        Pin latitude:<br>
+        <input type="text" name="latitude" [(ngModel)]="selectedMarker.latitude">
+        <br>
+        Pin longitude:<br>
+        <input type="text" name="longitude" [(ngModel)]="selectedMarker.longitude">
+        <br>
+        Pin image url:<br>
+        <input type="text" name="image_url" [(ngModel)]="selectedMarker.image_url">
+        <br><br>
+        <input type="submit" value="Create" (click)="createOrUpdateMarker(f)">
+      </form>
+    </div>
+
+    <div class="updateMenu" *ngIf='showUpdate'>
+      <table>
+        <thead>
+          <th>City</th>
+          <th>Pin</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let marker of markers'>
+            <td>{{marker.city}}</td>
+            <td>{{marker.title}}</td>
+            <td><button (click)="selectMarker(marker)">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <form #f="ngForm" *ngIf='selectedMarker'>
+          Pin city:<br>
+          <input type="text" name="city" [(ngModel)]="selectedMarker.city">
+          <br>
+          Pin title:<br>
+          <input type="text" name="title" [(ngModel)]="selectedMarker.title">
+          <br>
+          Pin street name:<br>
+          <input type="text" name="street" [(ngModel)]="selectedMarker.street">
+          <br>
+          Pin street number:<br>
+          <input type="text" name="street_number" [(ngModel)]="selectedMarker.street_number">
+          <br>
+          Pin zip:<br>
+          <input type="text" name="zip" [(ngModel)]="selectedMarker.zip">
+          <br>
+          Pin phone:<br>
+          <input type="text" name="phone" [(ngModel)]="selectedMarker.phone">
+          <br>
+          Pin email:<br>
+          <input type="text" name="email" [(ngModel)]="selectedMarker.email">
+          <br>
+          Pin website:<br>
+          <input type="text" name="website_url" [(ngModel)]="selectedMarker.website_url">
+          <br>
+          Pin description:<br>
+          <input type="text" name="description" [(ngModel)]="selectedMarker.description">
+          <br>
+          Pin latitude:<br>
+          <input type="text" name="latitude" [(ngModel)]="selectedMarker.latitude">
+          <br>
+          Pin longitude:<br>
+          <input type="text" name="longitude" [(ngModel)]="selectedMarker.longitude">
+          <br>
+          Pin image url:<br>
+          <input type="text" name="image_url" [(ngModel)]="selectedMarker.image_url">
+          <br><br>
+          <input type="submit" value="Update" (click)="createOrUpdateMarker(f)">
+      </form>
+    </div>
+
+    <div class="deleteMenu" *ngIf='showDelete'>
+      <table>
+        <thead>
+            <th>ID</th>
+          <th>City</th>
+          <th>Pin</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let marker of markers'>
+              <td>{{marker.id}}</td>
+            <td>{{marker.city}}</td>
+            <td>{{marker.title}}</td>
+            <td><button (click)="deleteMarker(marker.id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

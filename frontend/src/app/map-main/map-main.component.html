@@ -1,0 +1,21 @@
+<app-sidebar></app-sidebar>
+
+<agm-map [zoom]='zoom' [latitude]="lat" [longitude]="lng">
+  <div *ngFor='let marker of markers'>
+  <agm-marker [latitude]="marker.latitude" [longitude]="marker.longitude" [title]="marker.title">
+    <agm-info-window>
+        <div id="content">
+        <div id="siteNotice">
+        </div>
+        <h2 id="firstHeading" class="firstHeading"> {{marker.title}} </h2>
+        <p>{{marker.street}} {{marker.street_number}}, {{marker.zip}} {{marker.city}},<br/> {{marker.phone}}, {{marker.email}}</p>
+        <div id="bodyContent">
+            {{marker.description}}
+        <p>{{marker.title}} <a [href]="marker.website_url" target="_blank">Go to Website.</a></p>
+        </div>
+        <img [src]='marker.image_url' width= "275" height= "200" style="display: block;">
+        </div>
+    </agm-info-window>
+  </agm-marker>
+  </div>
+</agm-map>

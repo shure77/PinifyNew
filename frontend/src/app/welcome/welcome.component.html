@@ -1,0 +1,15 @@
+<div class="row backgroundimg">
+  <div class="container">
+      <h1 class="lead">Enter the area or city<br>you want to search for cool spots!</h1>
+      <form (submit)="onSubmit()">
+      <input type="text" class="welcomeInput form-control" list='cities' name='cities'
+        [(ngModel)]='cityName'>
+        <datalist id='cities'>
+          <option *ngFor='let city of cities' [value]='city.city'></option>
+        </datalist>
+      <button type="button"
+              class="btn btn-light findMapsBtn"
+              [routerLink]="['/map-main', cityName]">FIND PINS</button>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.sidebar-outter {
+height: 100%;
+width: 20%;
+position: absolute;
+background-color: rgba(0, 0, 0, 0.8);
+margin-top: 70px;
+}
+
+.sidebar-inner {
+  height: 100%;
+  color: #ffff;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.actionBar {
+height: 70px;
+width: 20%;
+position: absolute;
+background-color: rgba(0, 0, 0, 0.8);
+text-align: center;
+}
+
+.actionBar img {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.deleteMenu table, .updateMenu table {
+  font-size: 10px;
+}
+
+form {
+  font-size: 12px;
+}

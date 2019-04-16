@@ -1,0 +1,65 @@
+body html{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.backgroundimg {
+  background-image: url("../../assets/startBackground.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.lead {
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 19%;
+  font-weight: 400;
+  text-shadow: 2px 2px #000;
+}
+
+.welcomeInput {
+  width: 54%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: larger;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: auto;
+  margin-bottom: 8px;
+  font-size: larger;
+}
+
+.textLabel {
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: 2px 2px #000;
+}
+
+table {
+  margin: 0 auto;
+  width: 65%;
+}
+
+table th, table td{
+  color: #000;
+  background: rgba(255, 255, 255, 0.4)
+}
+
+input[name='pins']{width: 500px;}
